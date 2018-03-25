@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Red Hat, Inc.
+ * Copyright (C) 2017-2018 Red Hat, Inc.
  *
  * Licensed under the GNU Lesser General Public License Version 2.1
  *
@@ -22,11 +22,10 @@
 #define LIBDNF_HY_MODULE_FORM_H
 
 #include "hy-types.h"
-#include "dnf-sack.h"
 
-#include <glib.h>
-
-G_BEGIN_DECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 enum _hy_module_form_param_e {
     HY_MODULE_FORM_NAME = 0,
@@ -45,6 +44,8 @@ long long hy_module_form_get_version(HyModuleForm module_form);
 void hy_module_form_set_version(HyModuleForm module_form, long long version);
 void hy_module_form_set_string(HyModuleForm module_form, int which, const char* str_val);
 
-G_END_DECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif //LIBDNF_HY_MODULE_FORM_H
